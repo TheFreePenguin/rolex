@@ -8,5 +8,14 @@ echo "Step 4: Applying patch"
 git apply roblox-wine-staging-v2.patch
 echo "Step 5: Entering source dir"
 cd wine-tkg-git
-echo "Step 6: Edit config file?"
-if
+echo "Step 6: Edit config file? [y/N]"
+read
+if [ $REPLY = y ]
+then
+nano customization.cfg
+fi
+echo "Step 7: Installing dependencies"
+sudo dpkg --add-architecture i386 && sudo apt update && sudo apt upgrade && sudo apt install autoconf libxi-dev libvulkan-dev
+echo "Step 8: Compiling Wine"
+./non-makepkg-build.sh
+echo "Step 9: 
