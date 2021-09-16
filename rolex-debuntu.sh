@@ -18,4 +18,8 @@ echo "Step 7: Installing dependencies"
 sudo dpkg --add-architecture i386 && sudo apt update && sudo apt upgrade && sudo apt install autoconf libxi-dev libvulkan-dev
 echo "Step 8: Compiling Wine"
 ./non-makepkg-build.sh
-echo "Step 9: 
+echo "Step 9: Getting the name of Grapejuice install folder"
+cd non-makepkg-builds
+realpath wine* >> ../../../build.name
+echo "Step 10: Install Grapejuice"
+bash ../../../grapejuice.sh
