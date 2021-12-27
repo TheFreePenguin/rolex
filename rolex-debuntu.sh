@@ -1,4 +1,5 @@
 echo "Welcome to RoLeX! Do you want to install Roblox? [y/N]"
+read
 if [ $REPLY = y ]
 then
   echo "Step 1: Update Repositories"
