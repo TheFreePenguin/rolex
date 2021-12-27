@@ -13,4 +13,6 @@ then
   echo "Step 4b: Install Grapejuice"
   cd /tmp/grapejuice
   python3 ./install.py
-  
+  else
+  exit
+  fi
