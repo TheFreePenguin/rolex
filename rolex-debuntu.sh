@@ -2,6 +2,7 @@ echo "Welcome to RoLeX! Do you want to install Roblox? [y/N]"
 read
 if [ $REPLY = y ]
 then
+  set -e
   echo "Step 1: Update Repositories"
   sudo apt update
   echo "Step 2: Install Dependencies"
