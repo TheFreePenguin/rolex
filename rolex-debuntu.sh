@@ -1,25 +1,16 @@
-echo "Step 1: Cloning wine-tkg-git"
-git clone https://github.com/Frogging-Family/wine-tkg-git.git
-echo "Step 2: Entering cloned directory"
-cd wine-tkg-git
-echo "Step 3: Downloading patch"
-curl https://raw.githubusercontent.com/e666666/robloxWineBuildGuide/main/roblox-wine-staging-v2.patch --output roblox-wine-staging-v2.patch
-echo "Step 4: Applying patch"
-git apply roblox-wine-staging-v2.patch
-echo "Step 5: Entering source dir"
-cd wine-tkg-git
-echo "Step 6: Edit config file? [y/N]"
-read
+echo "Welcome to RoLeX! Do you want to install Roblox? [y/N]"
 if [ $REPLY = y ]
 then
-nano customization.cfg
-fi
-echo "Step 7: Installing dependencies"
-sudo dpkg --add-architecture i386 && sudo apt update && sudo apt upgrade && sudo apt install autoconf libxi-dev libvulkan-dev
-echo "Step 8: Compiling Wine"
-./non-makepkg-build.sh
-echo "Step 9: Getting the name of Grapejuice install folder"
-cd non-makepkg-builds
-realpath wine* >> ../../../build.name
-echo "Step 10: Install Grapejuice"
-bash ../../../grapejuice.sh
+  echo "Step 1: Update Repositories"
+  sudo apt update
+  echo "Step 2: Install Dependencies"
+  sudo apt install -y git python3-pip python3-setuptools python3-wheel python3-dev pkg-config libcairo2-dev gtk-update-icon-cache p7zip desktop-file-utils xdg-utils libgirepository1ils libgirepos.0-dev gir1.2-gtk3.0
+  echo "Step 3: Install Wine"
+  wget https://pastebin.com/raw/5SeVb005 -O /tmp/grapejuice-wine-tkg.py
+  python3 /tmp/grapejuice-wine-tkg.py
+  echo "Step 4a: Download Grapejuice"
+  git clone https://gitlab.com/brinkervii/grapejuice.git /tmp/grapejuice
+  echo "Step 4b: Install Grapejuice"
+  cd /tmp/grapejuice
+  python3 ./install.py
+  
