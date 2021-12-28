@@ -8,7 +8,7 @@ then
   echo "Step 2: Install Dependencies"
   sudo apt install -y git python3-pip python3-setuptools python3-wheel python3-dev pkg-config libcairo2-dev gtk-update-icon-cache p7zip-full desktop-file-utils xdg-utils libgirepository1.0-dev gir1.2-gtk-3.0
   echo "Step 3a: Install Wine"
-  sudo apt install winehq-devel
+  sudo apt install wine-development
   echo "Step 3b: Install Wine"
   wget https://pastebin.com/raw/5SeVb005 -O /tmp/grapejuice-wine-tkg.py
   python3 /tmp/grapejuice-wine-tkg.py
